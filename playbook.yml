@@ -18,9 +18,10 @@
   - name: Copy the build in the destination
     copy: src=/var/lib/jenkins/workspace/projectstatement1/target/addressbook.war dest={{dest_path}}
   - name: Build Dockerfile
-    command: chdir={{dest_path}} docker build -t ansible23 .
-  - name: Run the image to deploy app in container
-    command: docker run -d -P ansible23
+    command: chdir={{dest_path}} docker build -t myimage1 .
+  - name: tag the image name
+    command: docker tag ansible23 mydockerrepo/myimage1
   - name: Push the image to docker hub
-    command: docker tag ansible23 mydockerrepo/ansible23
-    command: docker push mydockerrepo/ansible23
+    command: docker push mydockerrepo/myimage1
+  - name: Run the image to deploy app in container
+    command: docker run -d -P myimage1
