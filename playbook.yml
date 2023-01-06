@@ -3,7 +3,7 @@
   become: true
   become_user: root
   vars:
-   repo_path: https://github.com/Sonal0409/DevOpsCodeDemo.git
+   repo_path: https://github.com/Sindhu-Mano/project1
    dest_path: /tmp/gitrepo
   tasks:
   - name: Install multiple packages on host server
