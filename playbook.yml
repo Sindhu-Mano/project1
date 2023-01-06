@@ -1,5 +1,5 @@
 ---
-- hosts: webserver
+- hosts: hostserver
   become: true
   become_user: root
   vars:
