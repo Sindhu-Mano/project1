@@ -19,5 +19,5 @@
     copy: src=/var/lib/jenkins/workspace/projectstatement1/target/addressbook.war dest={{dest_path}}
   - name: Build Dockerfile
     command: chdir={{dest_path}} docker build -t myimage1 .
-  -name: Run the image to deploy container
+  - name: Run the image to deploy container
     command: docker run -d -P myimage1
